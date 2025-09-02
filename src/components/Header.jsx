@@ -2,7 +2,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { BurgerMenu } from "./BurgerMenu";
 import { navLink } from "../styles/classes";
 
-const Header = () => {
+export const Header = () => {
   const navData = [
     {name: 'Меню', href: '/'},
     {name: 'Галерея', href: '/'},
@@ -43,7 +43,7 @@ const Header = () => {
           <img 
             src="src/assets/img/logo-white-symbol.png" 
             alt="Pravda Coffee" 
-            className="w-10 md:w-12 lg:hidden lg:w-14 z-100 relative"
+            className="w-10 md:w-12 lg:hidden lg:w-14 relative z-100"
             aria-label="Главная страница" />
 
           <img 
@@ -66,5 +66,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header;

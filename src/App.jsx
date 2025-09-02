@@ -1,15 +1,13 @@
-import Header from './components/Header'
+import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Advantages } from './components/Advantages';
 
 export default function App() {
-
-  const body = document.querySelector('body');
-  body.style.overflow = 'hidden';
-
   return (
     <>
       <Header />
       <Hero />
+      <Advantages />
     </>
   )
 }
