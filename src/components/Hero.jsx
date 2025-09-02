@@ -28,7 +28,7 @@ export const Hero = () => {
     }, 10000); // Менять фон каждые 10 сек
 
     return () => clearInterval(interval);
-  }, [])
+  }, [slides.length])
 
   return (
     <section className="w-full h-screen relative">
