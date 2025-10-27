@@ -16,12 +16,12 @@
   ![Demo](./docs/screenshots/menu-tablet.jpg)
   ![Demo](./docs/screenshots/gallery-tablet.jpg)
   ### Descktop:
-  ![Demo](./docs/screenshots/hero-descktop.jpg)
-  ![Demo](./docs/screenshots/menu-descktop.jpg)
+  ![Demo](./docs/screenshots/hero-desktop.jpg)
+  ![Demo](./docs/screenshots/menu-desktop.jpg)
   ### Карточки товаров (состояния):
   ![Demo](./docs/screenshots/card-states.jpg)
-## Скриншоты (layout):
 
+## Скриншоты (layout):
   ### Mobile first:
   ![Demo](./docs/screenshots/layout-hero-mobile.jpg)
   ![Demo](./docs/screenshots/layout-about-mobile.jpg)
