@@ -1,6 +1,6 @@
 import { FaShoppingBasket } from "react-icons/fa";
 import { BurgerMenu } from "./BurgerMenu";
-import { navLink } from "../styles/classes";
+import { headerNavLink } from "../styles/classes";
 
 export const Header = () => {
   const navData = [
@@ -25,7 +25,7 @@ export const Header = () => {
                 lg:after:transition-transform lg:after:duration-250 ease-in
                 lg:after:rounded-2xl lg:after:bg-amber-500
                 lg:hover:after:scale-x-100 lg:hover:after:origin-left`
-              : navLink}>
+              : headerNavLink}>
           {item.name}
         </a>
       </li>
@@ -33,7 +33,7 @@ export const Header = () => {
 
   return (
     <header className="
-      h-10 md:h-14 lg:h-16 mx-auto relative
+      h-10 md:h-14 lg:h-16 w-full mx-auto fixed z-1000
       font-['Open_Sans', sans-serif] bg-neutral-900">
       <div className="
         h-full mx-4 sm:mx-12 px-2 md:mx-16 md:px-4 lg:mx-20 lg:px-6

@@ -21,3 +21,15 @@
   ### Карточки товаров (состояния):
   ![Demo](./docs/screenshots/card-states.jpg)
 ## Скриншоты (layout):
+
+  ### Mobile first:
+  ![Demo](./docs/screenshots/layout-hero-mobile.jpg)
+  ![Demo](./docs/screenshots/layout-about-mobile.jpg)
+  ![Demo](./docs/screenshots/layout-drinks-mobile.jpg)
+  ### Tablet:
+  ![Demo](./docs/screenshots/layout-hero-tablet.jpg)
+  ![Demo](./docs/screenshots/layout-about-tablet.jpg)
+  ![Demo](./docs/screenshots/layout-menu-tablet.jpg)
+  ### Descktop:
+  ![Demo](./docs/screenshots/layout-hero-desktop.jpg)
+  ![Demo](./docs/screenshots/layout-about-desktop.jpg)

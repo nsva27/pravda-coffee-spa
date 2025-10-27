@@ -1,7 +1,10 @@
-import { mobileNavLink } from "../styles/classes"
+import { mobileNavLink } from "../styles/classes";
+// import { useEffect } from "react";
 
 export const SlideMobileMenu = ({isOpen, data}) => {
-  
+  // Запретить скролл при открытом бургер-меню через useEffect
+  // useEffect(() => ())
+
   return (
     <nav className={`
       flex justify-center
