@@ -1,10 +1,10 @@
 
 export const MenuCard = (props) => {
-  const {index, card} = props;
+  const {card} = props;
 
   return (
     <div
-      key={index}
+      // key={index}
       className="mt-4 mx-auto w-[300px] rounded-2xl shadow-[0px_0px_8px_#5B5B5B]/25"
     >
       {/* Заголовок */}
