@@ -3,10 +3,7 @@ export const MenuCard = (props) => {
   const {card} = props;
 
   return (
-    <div
-      // key={index}
-      className="mt-4 mx-auto w-[300px] rounded-2xl shadow-[0px_0px_8px_#5B5B5B]/25"
-    >
+    <div className="w-[300px] rounded-2xl bg-[#FDFDFD] shadow-[0px_0px_8px_#5B5B5B]/25">
       {/* Заголовок */}
       <h3 className="py-2 text-base font-light text-center">{card.title}</h3>
 

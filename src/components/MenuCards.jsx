@@ -1,7 +1,7 @@
-import { MenuSlider } from "./MenuSlider";
+import { MenuCarousel } from "./MenuCarousel";
 
 export const MenuCards = () => {
-  const classicMenuCards = [
+  const classicMenuData = [
     {
       title: 'Капучино',
       image: './src/assets/img/menu/classic/cappuccino.jpg',
@@ -58,7 +58,7 @@ export const MenuCards = () => {
     },
   ];
 
-  const rafMenuCards = [
+  const rafMenuData = [
     {
       title: 'Классический раф',
       image: './src/assets/img/menu/raf/raf-classic.jpg',
@@ -79,7 +79,7 @@ export const MenuCards = () => {
     },
   ];
 
-  const seasonMenuCards = [
+  const seasonMenuData = [
     {
       title: 'Капучино Брауни',
       image: './src/assets/img/menu/season/cappuccino-brauny.jpg',
@@ -106,7 +106,7 @@ export const MenuCards = () => {
     },
   ];
 
-  const freshMenuCards = [
+  const freshMenuData = [
     {
       title: 'Апельсиновый фреш',
       image: './src/assets/img/menu/fresh/fresh-orange.jpg',
@@ -130,13 +130,13 @@ export const MenuCards = () => {
   return (
     <section>
       <h3 className="mt-8 md:mt-10 text-5xl sm:text-6xl font-extrabold uppercase text-[#E1E1E1]/45 text-center">Классика</h3>
-      <MenuSlider data={classicMenuCards} />
+      <MenuCarousel data={classicMenuData} />
       <h3 className="mt-8 md:mt-10 text-5xl sm:text-6xl font-extrabold uppercase text-[#E1E1E1]/45 text-center">Раф</h3>
-      <MenuSlider data={rafMenuCards} />
+      <MenuCarousel data={rafMenuData} />
       <h3 className="mt-8 md:mt-10 text-5xl sm:text-6xl font-extrabold uppercase text-[#E1E1E1]/45 text-center">Сезонное</h3>
-      <MenuSlider data={seasonMenuCards} />
+      <MenuCarousel data={seasonMenuData} />
       <h3 className="mt-8 md:mt-10 text-5xl sm:text-6xl font-extrabold uppercase text-[#E1E1E1]/45 text-center">Фреши</h3>
-      <MenuSlider data={freshMenuCards} />
+      <MenuCarousel data={freshMenuData} />
     </section>
   );
 };
