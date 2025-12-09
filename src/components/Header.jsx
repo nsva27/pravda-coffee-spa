@@ -34,9 +34,9 @@ export const Header = () => {
   return (
     <header className="
       h-10 md:h-14 lg:h-16 w-full mx-auto fixed z-1000
-      font-['Open_Sans', sans-serif] bg-neutral-900">
+      font-['Open_Sans', sans-serif] bg-[#0c0c0c]">
       <div className="
-        h-full mx-4 sm:mx-12 px-2 md:mx-16 md:px-4 lg:mx-20 lg:px-6
+        h-full mx-4 sm:mx-12 md:mx-16 lg:mx-20 px-2 md:px-4 lg:px-6
         flex justify-between items-center">
       <BurgerMenu data={navData} />
         <a href="/">
