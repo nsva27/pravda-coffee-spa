@@ -1,4 +1,4 @@
-import { menuNavLink } from "../styles/classes";
+import { menuNavLink } from "../app/styles/classes";
 import { MenuCards } from "./MenuCards";
 
 export const Menu = () => {

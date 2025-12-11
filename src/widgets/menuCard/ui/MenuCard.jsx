@@ -1,19 +1,18 @@
-
 export const MenuCard = (props) => {
   const {card} = props;
 
   return (
     <div className="w-[300px] rounded-2xl bg-[#FDFDFD] shadow-[0px_0px_8px_#5B5B5B]/25 mx-auto">
-      {/* Заголовок */}
+      {/* Title */}
       <h3 className="py-2 text-base font-light text-center">{card.title}</h3>
 
-      {/* Картинка */}
+      {/* Card image */}
       <img
         src={card.image} 
         alt="cup-image"
         className="h-[256px] object-cover" />
 
-      {/* Объемы и цены */}
+      {/* Volume & price */}
       <div className="flex gap-x-2 justify-center p-4">
         {card.volume.map((vol, i) => (
           <button 

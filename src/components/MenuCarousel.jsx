@@ -2,7 +2,7 @@ import { useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import { MenuCard } from "./MenuCard";
+import { MenuCard } from "../widgets/menuCard/ui/MenuCard";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
