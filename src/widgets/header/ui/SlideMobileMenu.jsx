@@ -1,4 +1,4 @@
-import { mobileNavLink } from "../../../app/styles/classes";
+import { mobileNavLink } from "@/app/styles/classes";
 // import { useEffect } from "react";
 
 export const SlideMobileMenu = ({ isOpen, data }) => {
