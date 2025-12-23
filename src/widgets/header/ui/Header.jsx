@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header
       className="
-        h-10 md:h-14 lg:h-16 w-full mx-auto fixed z-1000
+        h-12 md:h-14 lg:h-16 w-full mx-auto fixed z-1000
         font-['Open_Sans', sans-serif] bg-[#0c0c0c]"
     >
       <div

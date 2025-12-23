@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/nsva27/pravda-coffee-react#readme",
   "dependencies": {
+    "clsx": "^2.1.1",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-icons": "^5.5.0"
