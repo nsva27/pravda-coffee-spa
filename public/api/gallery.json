@@ -1,0 +1,12 @@
+[
+  { "id": "1", "alt": "bakery", "src": "/img/gallery/bakery.jpg" },
+  { "id": "2", "alt": "art", "src": "/img/gallery/art.jpg" },
+  { "id": "3", "alt": "art", "src": "/img/gallery/art_2.jpg" },
+  { "id": "4", "alt": "shop", "src": "/img/gallery/shop.jpg" },
+  { "id": "5", "alt": "team", "src": "/img/gallery/team.jpg" },
+  { "id": "6", "alt": "team", "src": "/img/gallery/wall.jpg" },
+  { "id": "7", "alt": "top", "src": "/img/gallery/top.jpg" },
+  { "id": "8", "alt": "winners", "src": "/img/gallery/winners.jpg" },
+  { "id": "9", "alt": "winners", "src": "/img/gallery/winners_1.jpg" },
+  { "id": "10", "alt": "winners", "src": "/img/gallery/winners_2.jpg" }
+]

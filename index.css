@@ -1,5 +1,9 @@
-@import "./src/assets/fonts/fonts.css";
 @import "tailwindcss";
+@import "./src/assets/fonts/fonts.css";
+
+body {
+  font-family: "Open Sans", system-ui, sans-serif;
+}
 
 ::-webkit-scrollbar {
   display: none;

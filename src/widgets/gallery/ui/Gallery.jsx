@@ -2,11 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import photos from "../data/gallery.json";
-
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 export const Gallery = () => {
@@ -15,11 +12,20 @@ export const Gallery = () => {
   const [height, setHeight] = useState("50vh");
   const [isClosing, setIsClosing] = useState(false);
   const contentRef = useRef(null);
+  const [photos, setPhotos] = useState([]);
 
+  useEffect(() => {
+    fetch("/api/gallery.json")
+      .then((res) => res.json())
+      .then((data) => setPhotos(data));
+  }, []);
+
+  // Open image
   const viewImage = (photo, index) => {
     setViewer({ src: photo.src, alt: photo.alt, index });
   };
 
+  // Expand fullsized gallery container
   const toggleExpand = () => {
     if (!expanded) {
       const fullHeight = contentRef.current.scrollHeight;
@@ -161,7 +167,7 @@ export const Gallery = () => {
                   src={photo.src}
                   alt={photo.alt || ""}
                   className="
-                    w-full object-cover rounded-2xl lg:cursor-pointer
+                    w-full object-cover rounded-xl lg:cursor-pointer
                     transform transition-transform ease-in-out duration-300 hover:scale-105"
                   onClick={() => viewImage(photo, index)}
                 />
@@ -173,12 +179,12 @@ export const Gallery = () => {
         <button
           onClick={toggleExpand}
           className="
-            w-[70px] h-[70px] mx-auto flex items-center justify-center
+            w-[70px] h-[70px] mx-auto flex justify-center
             absolute left-0 right-0 -bottom-10 z-10
             rounded-full animate-bounce cursor-pointer bg-amber-500 shadow-lg/70 shadow-amber-500/50"
         >
           {/* Arrow container */}
-          <div className="relative w-8 h-6">
+          <div className="mt-[30%] relative w-8 h-6">
             <span
               className={`
                 absolute left-0 top-1/2 w-5 h-1

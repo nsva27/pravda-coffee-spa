@@ -1,8 +1,8 @@
 import { BurgerMenu } from "./BurgerMenu";
-import { navData } from "@entities/navigation/model/navData";
-import { Logo } from "@shared/ui/logo/Logo";
-import { Navigation } from "@entities/navigation/ui/Navigation";
-import { CartButton } from "@features/cart/ui/CartButton";
+import { navData } from "@/entities/navigation/model/navData";
+import { Logo } from "@/shared/logo";
+import { Navigation } from "@/entities/navigation";
+import { CartButton } from "@/features/cart";
 
 export const Header = () => {
   return (
