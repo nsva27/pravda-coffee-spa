@@ -57,18 +57,23 @@ export const Gallery = () => {
 
   return (
     <>
-      {/* Full size image by click */}
+      {/* Open carousel by click */}
       {viewer && (
         <div
           className={clsx(
             `
-            w-screen h-screen flex justify-center items-center
-            fixed z-100 inset-0 bg-[#161616]/95 backdrop-blur-md
-            transition-opacity duration-400`,
+            w-100vw h-100vh
+            flex items-center justify-center
+            fixed top-16 inset-0 z-100
+            bg-[#161616]/95 backdrop-blur-md transition-opacity duration-400`,
             isClosing ? "opacity-0" : "opacity-100",
           )}
         >
-          <GalleryCarousel photos={photos} viewer={viewer} />
+          <GalleryCarousel
+            photos={photos}
+            viewer={viewer}
+            onClose={closeViewer}
+          />
           {/* Custom buttons for scrolling */}
           <SliderNavButton direction="prev" />
           <SliderNavButton direction="next" />
@@ -87,5 +92,4 @@ export const Gallery = () => {
 // Изменить анимацию кнопки (float)
 // Адаптировать галерею под телефоны и планшеты
 // ***
-// Нумерация слайдов сверху фотографии
 // Стрелка "назад" для выхода

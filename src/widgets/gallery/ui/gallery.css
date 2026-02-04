@@ -1,0 +1,13 @@
+/* Gallery carousel pagination */
+.swiper-pagination-fraction {
+  width: 70px;
+  margin-inline: auto;
+  padding: 3px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b0a9a9;
+}
+
+.swiper-pagination-current {
+  color: #fe9a00;
+}

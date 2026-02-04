@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 export const SliderNavButton = ({ direction }) => {
   return (
@@ -8,14 +9,25 @@ export const SliderNavButton = ({ direction }) => {
         direction === "prev" && "view-prev",
         direction === "next" && "view-next",
         `
-        w-[20vw] h-screen
+        w-[22vw] h-[30vh]
         flex items-center
-        absolute top-0 z-110
-        cursor-pointer group
+        absolute z-110
+        cursor-pointer group focus:outline-0 shadow-none
         ${direction === "prev" ? "left-0 justify-end" : "right-0 justify-start"}`,
       )}
     >
-      <div className="w-17.5 h-17.5 relative">
+      {/* Arrows by react-icons*/}
+      <IoChevronBackOutline
+        className={clsx(
+          `
+          text-4xl text-gray-100 
+          transition-all duration-500
+          group-hover:text-amber-500 group-hover:w-14`,
+          direction === "prev" ? "" : "rotate-180",
+        )}
+      />
+      {/* My custom arrows */}
+      {/* <div className="relative">
         <span
           className={clsx(
             `
@@ -38,7 +50,7 @@ export const SliderNavButton = ({ direction }) => {
               : "top-5 right-3 rotate-45 group-hover:w-14 group-hover:top-3",
           )}
         />
-      </div>
+      </div> */}
     </button>
   );
 };
