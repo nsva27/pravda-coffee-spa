@@ -1,10 +1,10 @@
 # Проект Pravda Coffee
-  - Веб-приложение кофейни, демонстрирующее навыки работы с React, tailwind css, стилями
+  - Веб-приложение кофейни, демонстрирующее навыки работы с React, Tailwind css, архитектурой FSD
 
-## Технологии
-  ### Frontend:
+## Технологии:
     - React + Vite
     - Tailwind css (mobile first)
+    - FSD
 
 ## Скриншоты (figma)
   ### Mobile first:
