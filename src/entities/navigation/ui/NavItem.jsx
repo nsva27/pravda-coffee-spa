@@ -1,13 +1,22 @@
-import { headerNavLink, navLinkIsChecked } from "@/app/styles/classes";
+import clsx from "clsx";
 
-export const NavItem = ({ item }) => {
+import { navStyles } from "../styles";
+
+export const NavItem = ({ item, variant, isActive }) => {
   return (
     <li>
       <a
         href={item.href}
-        className={item.isChecked ? navLinkIsChecked : headerNavLink}
+        className={clsx(
+          navStyles.base,
+          item.isChecked ? "text-amber-500" : navStyles.variants[variant],
+        )}
       >
-        {item.name}
+        <span
+          className={clsx(item.isChecked && navStyles.state.navItemIsChecked)}
+        >
+          {item.name}
+        </span>
       </a>
     </li>
   );

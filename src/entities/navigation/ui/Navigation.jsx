@@ -1,12 +1,16 @@
 import { NavItem } from "./NavItem";
-import { navData } from "../model/navData";
 
-export const Navigation = () => {
+export const Navigation = ({ navItems = [], className, variant, isActive }) => {
   return (
-    <nav className="hidden sm:block">
-      <ul className="flex gap-10 text-white">
-        {navData.map((item) => (
-          <NavItem key={item.name} item={item} />
+    <nav className={className}>
+      <ul className="flex gap-10 justify-center items-center">
+        {navItems.map((item) => (
+          <NavItem
+            key={item.id}
+            item={item}
+            variant={variant}
+            isActive={isActive}
+          />
         ))}
       </ul>
     </nav>

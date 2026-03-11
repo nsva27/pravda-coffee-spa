@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { SlideMobileMenu } from "./SlideMobileMenu";
 
-export const BurgerMenu = ({ data }) => {
+export const BurgerMenu = ({ navItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <button
-        className={`sm:hidden w-6 h-4 flex flex-col justify-between cursor-pointer outline-none relative z-50`}
+        className="
+          sm:hidden w-6 h-4
+          flex flex-col justify-between 
+          relative z-50
+          cursor-pointer outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span
@@ -24,7 +28,7 @@ export const BurgerMenu = ({ data }) => {
         ></span>
       </button>
 
-      <SlideMobileMenu isOpen={isOpen} data={data} />
+      <SlideMobileMenu isOpen={isOpen} data={navItems} />
     </>
   );
 };

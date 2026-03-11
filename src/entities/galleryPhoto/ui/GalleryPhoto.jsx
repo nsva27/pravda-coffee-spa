@@ -15,7 +15,7 @@ export const GalleryPhoto = ({ src, alt, resetKey }) => {
   return (
     <div
       className="
-        w-full h-full
+        w-full h-full relative
         flex justify-center items-center overflow-hidden"
     >
       <img
@@ -24,7 +24,7 @@ export const GalleryPhoto = ({ src, alt, resetKey }) => {
         className={clsx(
           `
           max-w-full max-h-full
-          object-contain rounded-2xl transition-all duration-400`,
+          object-contain rounded-2xl transition-all duration-500`,
           !isScaled ? "scale-100 cursor-zoom-in" : "scale-170 cursor-zoom-out",
         )}
         onClick={zoomPhoto}

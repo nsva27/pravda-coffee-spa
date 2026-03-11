@@ -1,19 +1,18 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 
-import { MenuCard } from "../widgets/menuCard/ui/MenuCard";
+import { MenuCard } from "../../menuCard";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
-export const MenuCarousel = ({data}) => {
-  // isMobile - true если экран < 1024
+export const MenuCarousel = ({ data }) => {
+  // isMobile - true if screen < 1024
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
     const hendleResize = () => {
-      setIsMobile(window.innerWidth < 1024)
+      setIsMobile(window.innerWidth < 1024);
     };
     window.addEventListener("resize", hendleResize);
 
@@ -21,18 +20,16 @@ export const MenuCarousel = ({data}) => {
   }, []);
 
   return (
-    <div className="max-w-[1200px] w-full mx-auto px-4 py-6">
+    <div className="max-w-300 w-full mx-auto px-4 py-6">
       <Swiper
-        modules={[Navigation]}
-        navigation={true}
         allowTouchMove={isMobile}
         loop={true}
         grabCursor={isMobile}
         slidesPerView={1}
         speed={250}
         breakpoints={{
-          640: {slidesPerView: 2},
-          1024: {slidesPerView: 3}
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
         }}
         className="select-none"
       >
@@ -45,8 +42,3 @@ export const MenuCarousel = ({data}) => {
     </div>
   );
 };
-
-// Что исправить?
-
-// Слушатель resize срабатывает только после обновления страницы.
-// Стиль стрелок.

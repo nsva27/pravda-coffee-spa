@@ -8,5 +8,6 @@
   { "id": "7", "alt": "top", "src": "/img/gallery/top.jpg" },
   { "id": "8", "alt": "winners", "src": "/img/gallery/winners.jpg" },
   { "id": "9", "alt": "winners", "src": "/img/gallery/winners_1.jpg" },
-  { "id": "10", "alt": "winners", "src": "/img/gallery/winners_2.jpg" }
+  { "id": "10", "alt": "winners", "src": "/img/gallery/winners_2.jpg" },
+  { "id": "11", "alt": "art", "src": "/img/gallery/art_3.jpg" }
 ]

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
 import { useGalleryData } from "../model/useGalleryData";
@@ -8,9 +8,28 @@ import { GalleryGrid } from "./GalleryGrid";
 import { GalleryCarousel } from "./GalleryCarousel";
 import { SliderNavButton } from "@/shared/sliderNavButton";
 
-export const Gallery = () => {
+export const Gallery = ({ setActive }) => {
   const [viewer, setViewer] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Observe section viewport
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setActive("gallery");
+  //       } else {
+  //         setActive(null);
+  //       }
+  //     },
+  //     { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
+  //   );
+
+  //   observer.observe(sectionRef.current);
+
+  //   return () => observer.disconnect();
+  // }, []);
 
   // Get array of gallery data in photos variable
   const { photos } = useGalleryData();
@@ -56,7 +75,7 @@ export const Gallery = () => {
   }, [viewer]);
 
   return (
-    <>
+    <section className="pb-8 lg:pb-15 relative" ref={sectionRef}>
       {/* Open carousel by click */}
       {viewer && (
         <div
@@ -83,13 +102,14 @@ export const Gallery = () => {
       <SectionTitle>Галерея</SectionTitle>
       {/* Gallery container */}
       <GalleryGrid viewPhoto={viewPhoto} data={useGalleryData} />
-    </>
+    </section>
   );
 };
 
-// Текущие задачи:
-// *
-// Изменить анимацию кнопки (float)
+// - Текущие задачи:
 // Адаптировать галерею под телефоны и планшеты
-// ***
-// Стрелка "назад" для выхода
+// Картинка увеличиваетс внутри своего блока, а не весь блок целиком
+
+// - Решить проблемы:
+// При скролле между секциями пропадает выделение. Реализовать переключение с одной сразу на другую
+// При раскрытии галереи выделение названия секции исчезает. Название должно быть выделено всегда

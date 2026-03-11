@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 
 import { ExpandButton } from "./ExpandButton";
+import clsx from "clsx";
 
 export const GalleryGrid = ({ viewPhoto, data }) => {
   const { photos } = data();
@@ -8,6 +9,7 @@ export const GalleryGrid = ({ viewPhoto, data }) => {
   const [height, setHeight] = useState("50vh");
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef(null);
+  const expandBtnRef = useRef(null);
 
   // Expand fullsized gallery container
   const toggleExpand = () => {
@@ -20,32 +22,54 @@ export const GalleryGrid = ({ viewPhoto, data }) => {
     setExpanded((prev) => !prev);
   };
 
+  // Expand button position
+  const setBtnPosition = () => {};
+
   return (
-    <div className="relative z-1">
+    <div className="">
       <div
         ref={contentRef}
         style={{ height }}
         className="
-          mb-10 pt-5 pb-5 overflow-hidden shadow-lg/10 
-          transition-all ease-in-out duration-700"
+          pt-5 pb-5
+          overflow-hidden shadow-lg/15 rounded-b-2xl
+          transition-all ease-in-out duration-1000"
       >
-        <div className="px-2 md:px-4 columns-2 sm:columns-3 lg:columns-4 gap-2 sm:gap-4 ">
+        <div className="px-2 md:px-4 columns-2 gap-2 sm:columns-3 sm:gap-4 lg:columns-4">
           {photos.map((photo, index) => (
-            <div key={photo.id} className="mb-2 sm:mb-4 break-inside-avoid">
+            <div
+              key={photo.id}
+              className="
+                mb-2 sm:mb-4 relative 
+                rounded-xl lg:cursor-pointer
+                group overflow-hidden"
+              onClick={() => viewPhoto(photo, index)}
+            >
+              {/* Dark overlay */}
+              <span
+                className="
+                  absolute inset-0 z-10
+                  bg-black/20 group-hover:opacity-0
+                  transition-opacity duration-500 pointer-events-none"
+              />
               <img
                 src={photo.src}
                 alt={photo.alt || ""}
                 className="
-                  w-full object-cover rounded-xl lg:cursor-pointer
-                  transform transition-transform ease-in-out duration-300 hover:scale-105"
-                onClick={() => viewPhoto(photo, index)}
+                  w-full
+                  object-cover group-hover:scale-110
+                  transition-transform duration-500 ease-out"
               />
             </div>
           ))}
         </div>
       </div>
       {/* Button for expanding of gallery container */}
-      <ExpandButton expanded={expanded} onToggle={toggleExpand} />
+      <ExpandButton
+        ref={expandBtnRef}
+        expanded={expanded}
+        onToggle={toggleExpand}
+      />
     </div>
   );
 };

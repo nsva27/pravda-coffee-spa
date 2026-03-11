@@ -1,11 +1,7 @@
-import { mobileNavLink, navLinkIsChecked } from "@/app/styles/classes";
+import { navStyles } from "@/entities/navigation/styles";
 import { FaTelegram } from "react-icons/fa6";
-// import { useEffect } from "react";
 
 export const SlideMobileMenu = ({ isOpen, data }) => {
-  // Запретить скролл при открытом бургер-меню через useEffect
-  // useEffect(() => ())
-
   return (
     <div
       className={`
@@ -35,7 +31,7 @@ export const SlideMobileMenu = ({ isOpen, data }) => {
                 className={
                   item.isChecked
                     ? "text-xl text-amber-500 font-medium"
-                    : mobileNavLink
+                    : navStyles.variants.header
                 }
               >
                 {item.name}
@@ -45,9 +41,11 @@ export const SlideMobileMenu = ({ isOpen, data }) => {
         </ul>
       </nav>
       <div className="w-40 h-px bg-white mt-15"></div>
+
       {/* Social links */}
       <div className="social-links mt-10">
         <a href="/" target="_blank">
+          {/* Telegram icon */}
           <FaTelegram className="text-5xl text-white" />
         </a>
       </div>
