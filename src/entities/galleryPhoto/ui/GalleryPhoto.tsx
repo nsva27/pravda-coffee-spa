@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
-export const GalleryPhoto = ({ src, alt, resetKey }) => {
+interface GalleryPhotoProps {
+  src: string;
+  alt: string;
+  resetKey: number;
+}
+
+export const GalleryPhoto = ({ src, alt, resetKey }: GalleryPhotoProps) => {
   const [isScaled, setIsScaled] = useState(false);
 
   useEffect(() => {

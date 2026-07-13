@@ -6,30 +6,12 @@ import { useGalleryData } from "../model/useGalleryData";
 import { SectionTitle } from "@/shared/sectionTitle";
 import { GalleryGrid } from "./GalleryGrid";
 import { GalleryCarousel } from "./GalleryCarousel";
-import { SliderNavButton } from "@/shared/sliderNavButton";
+import { CarouselNavButton } from "@/shared/carouselNavButton";
 
 export const Gallery = ({ setActive }) => {
   const [viewer, setViewer] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
   const sectionRef = useRef(null);
-
-  // Observe section viewport
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         setActive("gallery");
-  //       } else {
-  //         setActive(null);
-  //       }
-  //     },
-  //     { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
-  //   );
-
-  //   observer.observe(sectionRef.current);
-
-  //   return () => observer.disconnect();
-  // }, []);
 
   // Get array of gallery data in photos variable
   const { photos } = useGalleryData();
@@ -75,7 +57,7 @@ export const Gallery = ({ setActive }) => {
   }, [viewer]);
 
   return (
-    <section className="pb-8 lg:pb-15 relative" ref={sectionRef}>
+    <section id="gallery" className="pb-8 lg:pb-15 relative" ref={sectionRef}>
       {/* Open carousel by click */}
       {viewer && (
         <div
@@ -94,8 +76,8 @@ export const Gallery = ({ setActive }) => {
             onClose={closeViewer}
           />
           {/* Custom buttons for scrolling */}
-          <SliderNavButton direction="prev" />
-          <SliderNavButton direction="next" />
+          <CarouselNavButton direction="prev" />
+          <CarouselNavButton direction="next" />
         </div>
       )}
 

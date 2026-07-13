@@ -1,31 +1,31 @@
-import { menuNavData } from "@/entities/navigation/model/menuNavData";
+import { menuNavData } from "@/shared/navigation/model/menuNavData";
+import { menuData } from "@/widgets/menu/model/menuData";
 
 import { SectionTitle } from "@/shared/sectionTitle";
-import { Navigation } from "@/entities/navigation";
-// import { MenuCards } from "./MenuCards";
-
-// import { menuNavLink } from "../../../app/styles/classes";
+import { Navigation } from "@/shared/navigation";
+import { MenuCategories } from "./MenuCategories";
 
 export const Menu = ({ isActive }) => {
   return (
-    <section className="pt-10 lg:pt-20 bg-[#FDFDFD]">
+    <section id="menu" className="pt-10 lg:pt-20 bg-[#FDFDFD]">
+      {/* Menu title */}
       <SectionTitle>Меню кофейни</SectionTitle>
-
+      {/* Menu navigation */}
       <div className="my-auto">
         <Navigation
           className="
             h-10 lg:h-15 w-full
             flex justify-center items-center
             mt-3 sm:mt-6
-            bg-amber-500
+            bg-[#FFB759]
             "
           variant="menu"
           navItems={menuNavData}
           isActive={isActive}
         />
       </div>
-
-      {/* <MenuCards /> */}
+      {/* Menu categories */}
+      <MenuCategories data={menuData} />
     </section>
   );
 };

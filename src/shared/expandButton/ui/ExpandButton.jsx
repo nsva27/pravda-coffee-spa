@@ -10,12 +10,13 @@ export const ExpandButton = ({ expanded, onToggle }) => {
         flex justify-center items-center
         sticky left-1/2 z-20 -translate-x-1/2
         rounded-full animate-bounce cursor-pointer outline-none
-        transition-all duration-500`,
+        transition-all duration-1000 delay-100`,
         expanded
           ? `
           bg-amber-500/75 
           hover:bg-amber-500
-          bottom-3`
+          bottom-3
+          translate-x-[40vw]`
           : `
           hover:bg-amber-500/10
           -bottom-20
@@ -50,10 +51,3 @@ export const ExpandButton = ({ expanded, onToggle }) => {
     </button>
   );
 };
-
-// Задачи:
-
-// Изначально стрелка под галереей оранжевая без фона
-// Клик -> уход стрелки вправо + появление фона у кнопки
-// Листание галереи -> кнопка зафиксированна на месте
-// Клик -> сворачивание галереи + кнопка на исходную позицию

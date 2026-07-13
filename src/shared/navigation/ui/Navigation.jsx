@@ -1,6 +1,12 @@
 import { NavItem } from "./NavItem";
 
-export const Navigation = ({ navItems = [], className, variant, isActive }) => {
+export const Navigation = ({
+  navItems = [],
+  className,
+  variant,
+  activeSection,
+  scrollToSection,
+}) => {
   return (
     <nav className={className}>
       <ul className="flex gap-10 justify-center items-center">
@@ -9,7 +15,8 @@ export const Navigation = ({ navItems = [], className, variant, isActive }) => {
             key={item.id}
             item={item}
             variant={variant}
-            isActive={isActive}
+            activeSection={activeSection}
+            scrollToSection={scrollToSection}
           />
         ))}
       </ul>

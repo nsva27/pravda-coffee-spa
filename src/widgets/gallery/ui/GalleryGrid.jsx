@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
-import { ExpandButton } from "./ExpandButton";
-import clsx from "clsx";
+import { ExpandButton } from "@/shared/expandButton";
+// import clsx from "clsx";
 
 export const GalleryGrid = ({ viewPhoto, data }) => {
   const { photos } = data();
@@ -26,7 +26,7 @@ export const GalleryGrid = ({ viewPhoto, data }) => {
   const setBtnPosition = () => {};
 
   return (
-    <div className="">
+    <div>
       <div
         ref={contentRef}
         style={{ height }}
@@ -64,6 +64,7 @@ export const GalleryGrid = ({ viewPhoto, data }) => {
           ))}
         </div>
       </div>
+
       {/* Button for expanding of gallery container */}
       <ExpandButton
         ref={expandBtnRef}

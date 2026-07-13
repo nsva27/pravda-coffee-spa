@@ -8,16 +8,16 @@ import { Gallery } from "@/widgets/gallery";
 import { useActiveSection } from "@/features/navigation";
 
 export const MainPage = () => {
-  const activeSection = useActiveSection();
+  const { activeSection, scrollToSection } = useActiveSection();
 
   return (
     <>
-      <Header />
+      <Header activeSection={activeSection} scrollToSection={scrollToSection} />
       <Hero />
       <Advantages />
-      <Menu isActive={activeSection === "menu"} />
-      <About isActive={activeSection === "about"} />
-      <Gallery isActive={activeSection === "gallery"} />
+      <Menu />
+      <About />
+      <Gallery />
     </>
   );
 };

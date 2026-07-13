@@ -1,4 +1,4 @@
-import { navStyles } from "@/entities/navigation/styles";
+import { navItemStyles } from "@/shared/navigation/navItemStyles";
 import { FaTelegram } from "react-icons/fa6";
 
 export const SlideMobileMenu = ({ isOpen, data }) => {
@@ -31,7 +31,7 @@ export const SlideMobileMenu = ({ isOpen, data }) => {
                 className={
                   item.isChecked
                     ? "text-xl text-amber-500 font-medium"
-                    : navStyles.variants.header
+                    : navItemStyles.variants.header
                 }
               >
                 {item.name}

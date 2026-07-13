@@ -1,17 +1,26 @@
-export const MenuCard = (props) => {
-  const { card } = props;
+interface MenuCardProps {
+  card: {
+    title: string;
+    image: string;
+    volume: string[];
+    price: string[];
+  };
+}
+
+export const MenuCard = ({ card }: MenuCardProps) => {
+  const { title, image, volume, price } = card;
 
   return (
-    <div className="w-75 rounded-2xl bg-[#FDFDFD] shadow-[0px_0px_8px_#5B5B5B]/25 mx-auto">
+    <div className="w-75 rounded-2xl bg-[#FDFDFD] shadow-[0px_0px_8px_#5B5B5B]/25">
       {/* Card title */}
-      <h3 className="py-2 text-base font-light text-center">{card.title}</h3>
+      <h3 className="py-2 text-base font-light text-center">{title}</h3>
 
       {/* Card image */}
-      <img src={card.image} alt="cup-image" className="h-64 object-cover" />
+      <img src={image} alt="cup-image" className="h-64 object-cover" />
 
       {/* Volume & price */}
       <div className="flex gap-x-2 justify-center p-4">
-        {card.volume.map((vol, i) => (
+        {volume.map((vol, i) => (
           <button
             key={i}
             className={
@@ -34,7 +43,7 @@ export const MenuCard = (props) => {
               {vol}
             </span>
             <span className="font-bold text-base text-[#5B5B5B]">
-              {card.price[i]}
+              {price[i]}
             </span>
           </button>
         ))}

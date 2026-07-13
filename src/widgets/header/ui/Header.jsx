@@ -1,11 +1,11 @@
-import { headerNavData } from "@/entities/navigation/model/headerNavData";
+import { headerNavData } from "@/shared/navigation/model/headerNavData";
 
 import { BurgerMenu } from "./BurgerMenu";
 import { Logo } from "@/shared/logo";
-import { Navigation } from "@/entities/navigation";
+import { Navigation } from "@/shared/navigation";
 import { CartButton } from "@/features/cart";
 
-export const Header = ({ isActive }) => {
+export const Header = ({ activeSection, scrollToSection }) => {
   return (
     <header
       className="
@@ -25,7 +25,8 @@ export const Header = ({ isActive }) => {
           className="hidden sm:block"
           variant="header"
           navItems={headerNavData}
-          isActive={isActive}
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
         />
         <CartButton />
       </div>

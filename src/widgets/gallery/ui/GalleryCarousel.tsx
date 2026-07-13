@@ -11,13 +11,29 @@ import { IoArrowBack } from "react-icons/io5";
 import { GalleryPhoto } from "@/entities/galleryPhoto/ui/GalleryPhoto";
 import { Container } from "@/shared/container";
 
+import type { GalleryPhotoData } from "@/entities/galleryPhoto";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "./gallery.css";
 
-export const GalleryCarousel = ({ photos, viewer, onClose }) => {
+interface GalleryCarouselProps {
+  photos: GalleryPhotoData[];
+  viewer: {
+    src: string;
+    alt: string;
+    index: number;
+  };
+  onClose: () => void;
+}
+
+export const GalleryCarousel = ({
+  photos,
+  viewer,
+  onClose,
+}: GalleryCarouselProps) => {
   const [resetZoomKey, setResetZoomKey] = useState(0);
 
   return (
@@ -30,6 +46,7 @@ export const GalleryCarousel = ({ photos, viewer, onClose }) => {
           text-gray-100 hover:text-amber-500 hover:left-3"
         onClick={onClose}
       />
+
       {/* Carousel */}
       <Swiper
         modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
@@ -73,6 +90,7 @@ export const GalleryCarousel = ({ photos, viewer, onClose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       {/* Outside pagination block */}
       <div className="gallery-pagination text-center"></div>
     </Container>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 import { SectionTitle } from "@/shared/sectionTitle";
-import { Container } from "@shared/container";
+import { Container } from "@/shared/container";
 
 export const About = ({ setActive }) => {
   const sectionRef = useRef(null);
@@ -27,10 +27,11 @@ export const About = ({ setActive }) => {
   return (
     <Container>
       <section
+        id="about"
         className="
-        h-150 py-8
-        flex flex-col items-center gap-y-30
-        bg-amber-300"
+          h-150 py-8 pt-10 lg:pt-20
+          flex flex-col items-center gap-y-30
+          bg-amber-300"
         ref={sectionRef}
       >
         <SectionTitle>О нас</SectionTitle>
