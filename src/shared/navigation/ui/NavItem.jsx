@@ -8,7 +8,7 @@ export const NavItem = ({ item, variant, activeSection, scrollToSection }) => {
     const section = document.getElementById(item.id);
 
     if (section) {
-      scrollToSection();
+      scrollToSection(item.id);
     }
   };
 
@@ -39,7 +39,3 @@ export const NavItem = ({ item, variant, activeSection, scrollToSection }) => {
     </li>
   );
 };
-
-// Разобраться с подсветкой пункта меню
-// Настроить скролл к определенной высоте секции
-// Сделать более плавный скролл

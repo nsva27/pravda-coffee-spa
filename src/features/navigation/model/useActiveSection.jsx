@@ -35,15 +35,12 @@ export const useActiveSection = () => {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  };
 
-  clearTimeout(timeoutRef.current);
-  timeoutRef.current = setTimeout(() => {
-    isScrollingRef.current = false;
-  }, 1000);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 1000);
+  };
 
   return { activeSection, scrollToSection };
 };
-
-// Сделать у галереи lg:pt-20
-// Настроить скролл,  понять, как он работает
